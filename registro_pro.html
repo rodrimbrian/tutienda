@@ -1,0 +1,112 @@
+<html>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+
+
+           <style>
+
+           .login-card-purple {
+    background: linear-gradient(145deg, #673AB7, #9C27B0);
+}
+
+.login-card-yellow {
+    background: linear-gradient(145deg, #FFC107, #FFEB3B);
+}
+
+.login-card-light {
+    background: linear-gradient(145deg, #eee, #fff);
+}
+
+.login-dark {
+    background: linear-gradient(145deg, #575b5d, #252b2d);
+}
+
+.login-blue {
+    background: linear-gradient(145deg, #2196F3, #3F51B5);
+}
+
+.login-purple-pink {
+    background: linear-gradient(145deg, #3F51B5, #E91E63);
+}
+
+body {
+    font-size: 13px;
+}
+
+           </style>
+
+           <center>
+                <form action="registro_pro.php" method="POST">
+
+        <div class="col-4">
+                <div class="login-card-light p-3 shadow-lg rounded">
+                    <div class="pt-3">
+                        <h2 class="text-danger">registro de proveedores</h2>
+                    </div>
+
+                    <form class="mt-5">
+                        <div class="form-group">
+                            <input type="email" name="correo"
+                                class="form-control form-control-sm"
+                                placeholder="correo"  required="">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"         name="nombre_usuario"
+                                class="form-control form-control-sm"
+                                placeholder="nombre_usuario"   required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="password"      name="contraseña"
+                                class="form-control form-control-sm"
+                                placeholder="contrase&ntilde;a"  required="">
+                        </div>
+                       <h4> datos de la empresa  </h4>
+
+
+                        <div class="form-group">
+                            <input type="text"         name="nombre_empresa"
+                                class="form-control form-control-sm"
+                                placeholder="nombre empresa"  required="">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"              name="codi_empresa"
+                                class="form-control form-control-sm"
+                                placeholder="codigo de la empresa"  required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="text"        name="ciudad"
+                                class="form-control form-control-sm"
+                                placeholder="ciudad"   required="">
+                        </div>
+
+
+                    <div class="form-group">
+                        <input type="text"            name="numero_celular"
+                            class="form-control form-control-sm"
+                            placeholder="numero de celular"   required="">
+                    </div>
+
+
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberCheckBox">
+                            <label class="form-check-label text-dark" for="rememberCheckBox">Dejar la cuenta iniciada?</label>
+                        </div>
+
+                        <div class="mt-5">
+                            <button class="btn btn-sm btn-danger col">
+                                ingresar
+                            </button>
+                        </div>
+
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </center>
+
+        </html>

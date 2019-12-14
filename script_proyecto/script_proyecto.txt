@@ -1,0 +1,167 @@
+﻿script proyecto
+
+mariaDB [(none)]> use proyecto;
+Database changed
+MariaDB [proyecto]> show tables;
++----------------------+
+| Tables_in_proyecto   |
++----------------------+
+| registro_proveedores |
+| registro_usuarios    |
+| tbproduct            |
++----------------------+
+
+create database proyecto;
+
+use proyecto;
+
+CREATE TABLE `tbproduct` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `precio` varchar(400) NOT NULL,
+  `descripcion` varchar(400) NOT NULL,
+  `cantidad` varchar(1000) null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `tbproduct`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `tbproduct`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE registro_usuarios (
+  correo VARCHAR(20) NOT NULL,
+  nombre_usuario VARCHAR(20) NULL,
+  contraseña VARCHAR(20) NULL,
+  PRIMARY KEY(correo)
+);
+
+CREATE TABLE registro_proveedores (
+  correo VARCHAR(40) NOT NULL,
+  nombre_usuario VARCHAR(20) NULL,
+  contraseña INT(20) NULL,
+  nombre_empresa VARCHAR(20) NULL,
+  codi_empresa INT(20) NULL,
+  ciudad VARCHAR(20) NULL,
+  numero_celular VARCHAR(30) NULL,
+  PRIMARY KEY(correo)
+);
+
+
+CREATE TABLE productos_pajina (
+  id  int(20) NOT NULL,
+  nombre VARCHAR(250) NULL,
+  img VARCHAR(250) NULL,
+  precio double(10,2) NULL,
+  PRIMARY KEY(id)
+);
+
+
+
+CREATE TABLE productos_proveedores (
+  id_producto int not null,
+  descripcion VARCHAR(250)NOT  NULL,
+  imagen_producto varchar(200) NOT NULL,
+  precio VARCHAR(250)NOT  NULL,
+  cantidad VARCHAR(400)NOT NULL,
+  PRIMARY KEY(id_producto)
+);
+
+
+CREATE TABLE registro_administradores (
+  codigo_empresa varchar(200) NOT NULL,
+  correo VARCHAR(250)NOT  NULL,
+  contraseña VARCHAR(250)NOT  NULL,
+  PRIMARY KEY(codigo_empresa)
+);
+
+
+CREATE TABLE inventario_administrador (
+  codigo_empresa varchar(200) NOT NULL,
+  correo VARCHAR(250)NOT  NULL,
+  contraseña VARCHAR(250)NOT  NULL,
+  PRIMARY KEY(codigo_empresa)
+);
+
+
+INSERT INTO `tbproduct` (`id`, `name`, `img`, `precio`,`descripcion`,`cantidad`) VALUES
+(1, 'audifonos','audifonos_1.jpg',300.000,'sony',5),
+(2, 'audifonos','audifonos_2.jpg',150.000,'sony',5),
+(3, 'cargador','cargador_1.jpg',22.000,'samsung',5),
+(4, 'celular','celular_1.jpg',800.000,'samsung',5),   
+(5, 'celular','celular_2.jpg',999.000,'motorola',5),
+(6, 'celular','celular_3.jpg',500.000,'sony',5),
+(7, 'televisor','televisor_1.jpg',990.000,'samsung',5),
+(8, 'televisor','televisor_2.jpg',800.000,'sony',5),
+(9, 'televisor','televisor_3.jpg',700.000,'samsung',5),
+(10,'equipo de sonido','equipo de sonido_1.jpg',900.000,'samsung',5),
+(11,'equipo de sonido','equipo de sonido_2.jpg',400.000,'sony',5),
+(12,'equipo de sonido','equipo de sonido_3.jpg',400.000,'samsung',5),
+(13,'computador de mesa','computador de mesa_1.jpg',900.000,'apple',5),
+(14,'portatil','portatil_1.jpg',800.000,'asus',5),
+(15,'portatil','portatil_2.jpg',850.000,'samsung',5),
+(16,'tenis','tenis nike_1.jpg',200.000,'nike',5),
+(17,'tenis','tenis nike_2.jpg',250.000,'nike',5),
+(18,'tenis','tenis nike_3.jpg',200.000,'nike',5),
+(19,'tenis','tenis adidas_1.jpg',150.000,'adidas',5),
+(20,'tenis','tenis adidas_2.jpg',200.000,'adidas',5),
+(21,'botas','botas para boxeo_1.jpg',300.000,'nike',5),
+(22,'gorra','gorra adidas_1.jpg',150.000,'adidas',5),
+(23,'chanclas','chanclas adidas_1.jpg',50.000,'adidas',5),
+(24,'chanclas','chanclas adidas_2.jpg',150.000,'adidas',5),
+(25,'licuadora','licuadora_1.webp',190.000,'oster',5),
+(26,'licuadora','licuadora_2.webp',200.000,'oster',5),
+(27,'licuadora','licuadora_3.jpg',210.000,'oster',5),
+(28,'zapatos','zapatos_1.jpg',150.000,'smith',5),
+(29,'zapatos','zapatos_2.jpg',200.000,'smith',5),
+(30,'tacones','tacones_1.jpg',100.000,'polo',5),
+(31,'tacones','tacones_2.jpg',200.000,'polo',5),
+(32,'tacones','tacones_3.jpg',300.000,'polo',5),
+(33,'sandalias','sandalias_1.jpg',50.000,'arcol',5);
+
+
++-----------+-------------+----------++----+--------------------+--------------------------
+| id | name               | img                      | precio    | descripcion | cantidad |
++----+--------------------+--------------------------+-----------+-------------+----------+
+|  1 | audifonos          | audifonos_1.jpg          | 300.000   | sony        | 3        |
+|  2 | audifonos          | audifonos_2.jpg          | 150.000   |             | 5        |
+|  3 | cargador           | cargador_1.jpg           | 22.000    |             | 3        |
+|  4 | celular            | celular_1.jpg            | 800.000   |             | 3        |
+|  5 | celular            | celular_2.jpg            | 999.999   |             | 3        |
+|  6 | celular            | celular_3.jpg            | 500.000   |             | 3        |
+|  7 | televisor          | televisor_1.jpg          | 1.000.000 |             | 3        |
+|  8 | televisor          | televisor_2.jpg          | 1.500.000 |             | 3        |
+|  9 | televisor          | televisor_3.jpg          | 2.000.000 |             | 3        |
+| 10 | equipo de sonido   | equipo de sonido_1.jpg   | 2.000.000 |             | 3        |
+| 11 | equipo de sonido   | equipo de sonido_2.jpg   | 2.100.000 |             | 3        |
+| 12 | equipo de sonido   | equipo de sonido_3.jpg   | 400.000   |             | 5        |
+| 13 | computador de mesa | computador de mesa_1.jpg | 2.000.000 |             | 3        |
+| 14 | portatil           | portatil_1.jpg           | 2.100.000 |             | 3        |
+| 15 | portatil           | portatil_2.jpg           | 2.500.000 |             | 3        |
+| 16 | tenis              | tenis nike_1.jpg         | 200.000   |             | 3        |
+| 17 | tenis              | tenis nike_2.jpg         | 250.000   |             | 3        |
+| 18 | tenis              | tenis nike_3.jpg         | 300.000   |             | 3        |
+| 19 | tenis              | tenis adidas_1.jpg       | 150.000   |             | 3        |
+| 20 | tenis              | tenis adidas_2.jpg       | 200.000   |             | 3        |
+| 21 | botas              | botas para boxeo_1.jpg   | 300.000   |             | 3        |
+| 22 | gorra              | gorra adidas_1.jpg       | 150.000   |             | 3        |
+| 23 | chanclas           | chanclas adidas_1.jpg    | 50.000    |             | 3        |
+| 24 | chanclas           | chanclas adidas_2.jpg    | 150.000   |             | 3        |
+| 25 | licuadora          | licuadora_1.webp         | 179.000   |             | 3        |
+| 26 | licuadora          | licuadora_2.webp         | 200.000   |             | 3        |
+| 27 | licuadora          | licuadora_3.jpg          | 200.000   |             | 3        |
+| 28 | zapatos            | zapatos_1.jpg            | 150.000   |             | 3        |
+| 29 | zapatos            | zapatos_2.jpg            | 200.000   |             | 3        |
+| 30 | tacones            | tacones_1.jpg            | 100.000   |             | 3        |
+| 31 | tacones            | tacones_2.jpg            | 200.000   |             | 3        |
+| 32 | tacones            | tacones_3.jpg            | 210.000   |             | 3        |
+| 33 | sandalias          | sandalias_1.jpg          | 100.000   |             | 3        |
++----+--------------------+--------------------------+-----------+-------------+----------+
+\\\\\\\\\\\\\\\\\\\\\\\ºº
+
+
+

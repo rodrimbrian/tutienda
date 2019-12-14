@@ -1,0 +1,86 @@
+<html>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+
+
+           <style>
+
+           .login-card-purple {
+    background: linear-gradient(145deg, #673AB7, #9C27B0);
+}
+
+.login-card-yellow {
+    background: linear-gradient(145deg, #FFC107, #FFEB3B);
+}
+
+.login-card-light {
+    background: linear-gradient(145deg, #eee, #fff);
+}
+
+.login-dark {
+    background: linear-gradient(145deg, #575b5d, #252b2d);
+}
+
+.login-blue {
+    background: linear-gradient(145deg, #2196F3, #3F51B5);
+}
+
+.login-purple-pink {
+    background: linear-gradient(145deg, #3F51B5, #E91E63);
+}
+
+body {
+    font-size: 13px;
+}
+
+           </style>
+<form action="iniciosesion_administradores.php" method="post">
+           <center>
+
+        <div class="col-4">
+                <div class="login-card-light p-3 shadow-lg rounded">
+                    <div class="pt-3">
+                        <h2 class="text-danger">inicio de sesion para administradores</h2>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="password"
+                            class="form-control form-control-sm"
+                            placeholder="codigo empresa" name="codigo empresa">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email"
+                            class="form-control form-control-sm"
+                            placeholder="correo personal" name="correo personal">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password"
+                            class="form-control form-control-sm"
+                            placeholder="contrase&ntilde;a" name="contraseña">
+                    </div>
+
+
+
+                        <div class="mt-5">
+                            <button class="btn btn-sm btn-danger col">
+                              ingresar
+                            </button>
+                        </div>
+
+                        <div class="mt-5">
+                            <p class="text-center">
+                                perdiste la contrase&ntilde;a?
+                                <a href="recupe_contra_admin.html">pulsa aqui para recuperarla</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </center>
+
+        </html>
